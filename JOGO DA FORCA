@@ -1,0 +1,28 @@
+import random
+
+palavras = ['python', 'programacao', 'computador', 'teclado', 'mouse', 'tela', 'internet']
+
+palavra = random.choice(palavras)
+
+palavra_oculta = ['_'] * len(palavra)
+
+tentativas_maximas = 6
+
+print("Bem-vindo ao Jogo da Forca!")
+
+while '_' in palavra_oculta and tentativas_maximas:
+    print(' '.join(palavra_oculta))
+    letra = input("Adivinhe uma letra: ")
+
+    if letra in palavra:
+        for i, letra_palavra in enumerate(palavra):
+            if letra_palavra == letra:
+                palavra_oculta[i] = letra
+    else:
+        tentativas_maximas -= 1
+        print("Letra incorreta. Tentativas restantes:", tentativas_maximas)
+
+if '_' not in palavra_oculta:
+    print("Parabéns! Você ganhou!")
+else:
+    print("Você perdeu! A palavra era:", palavra)
