@@ -1,0 +1,20 @@
+def questionario():
+    pet = input("Qual pet você tem? ")
+    peso = -1
+    while peso < 0:
+        peso = float(input("Digite o peso do seu pet (em kg): "))
+        if peso < 0:
+            print("O peso não pode ser negativo. Tente novamente.")
+   
+    if peso < 5:
+        print("Seu pet está leve.")
+    elif peso < 10:
+        print(f"Seu {pet} está saudável.")
+    elif peso < 15:
+        print(f"Seu {pet} está acima do peso.")
+    elif peso > 15:
+        print(f"Seu {pet} está muito pesado.")
+        print("consulte um veterinario")
+    else:
+      print("o peso nao pode ser negativo")
+questionario()
